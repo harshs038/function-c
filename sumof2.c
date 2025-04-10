@@ -10,6 +10,7 @@
     return 0;
   }
 // here add is a function 
+// if we using char instead of int so return is write as return 'a'
   int add(int a , int b ){
     return a+b;
   }
