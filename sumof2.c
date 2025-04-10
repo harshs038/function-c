@@ -9,6 +9,7 @@
     printf("%d", sum);
     return 0;
   }
+// here add is a function 
   int add(int a , int b ){
     return a+b;
   }
