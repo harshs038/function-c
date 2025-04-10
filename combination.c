@@ -1,38 +1,30 @@
-#include<stdio.h>
- int n ,r ,  facc =1 , facc1 = 1 , facc2 = 1 ;
-int main(){
-    printf("Enter a number : ") ;
-    scanf("%d" , &n) ;
-    printf("Enter a number : ") ;
-    scanf("%d" , &r) ;
- 
-     int ans = facc / (facc1 * facc2) ;
-    printf("Combination : %d\n", ans) ;
-    return 0 ;
+#include <stdio.h>
+
+// Function to calculate factorial
+int factorial(int num) {
+    int fact = 1;
+    for (int i = 2; i <= num; i++) {
+        fact *= i;
+    }
+    return fact;
 }
 
-int fac(){
-   
-    for(int i=1 ; i<=n ; i++){
-        facc = facc * i ;
-    }
-    printf("Factorial : %d\n", facc) ;
-    return facc ;
-}
-int fac1(){
-   
-    for(int i=1 ; i<=r ; i++){
-        facc1 = facc1 * i ;
-    }
-    printf("Factorial : %d\n", facc1) ;
-    return facc1 ;
+// Function to calculate nCr
+int nCr(int n, int r) {
+    return factorial(n) / (factorial(r) * factorial(n - r));
 }
 
-int fac2(){
-       
-    for(int i=1 ; i<=n-r ; i++){
-        facc2 = facc2 * i ;
-    }
-    printf("Factorial : %d\n", facc2) ;
-    return facc2 ;
+int main() {
+    int n, r;
+
+    // Taking input from the user
+    printf("Enter n: ");
+    scanf("%d", &n);
+    printf("Enter r: ");
+    scanf("%d", &r);
+
+    // Calculating and printing nCr
+    printf("nCr (%dC%d) = %d\n", n, r, nCr(n, r));
+
+    return 0;
 }
